@@ -31,9 +31,11 @@ li {
     text-align: center;
     color: white;
 }
+
 #spantext {
     color: yellow;
 }
+
 .exc {
     color: yellow;
 }
@@ -43,6 +45,35 @@ li {
     font-size: 35px;
     font-weight: normal;
     color: black;
+}
+
+#order-pizza {
+    color: #000;
+}
+
+.order {
+    background-color: black;
+}
+
+#list li {
+    font-size: 24px;
+    font-family: system-ui, serif;
+}
+
+.order-summary h1,
+.summary,
+.contact {
+    color: #000;
+    font-family: 'Love Ya Like A Sister', cursive;
+    margin-top: 30px;
+}
+
+.col-space {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+h2{
+    text-align: center;
 }
 
 /* .text-center{
