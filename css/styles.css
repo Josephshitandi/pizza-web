@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
 }
 
 .nav {
@@ -74,6 +74,9 @@ li {
 }
 h2{
     text-align: center;
+}
+.menu{
+    height: 500px;
 }
 
 /* .text-center{
