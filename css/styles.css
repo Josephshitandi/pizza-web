@@ -1,5 +1,10 @@
-.navi {
-    float: left;
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.nav {
+    float: right;
 }
 
 li {
@@ -8,7 +13,7 @@ li {
 }
 
 .h-buttons {
-    margin-top: 400px;
+    margin-top: 450px;
     margin-bottom: 100px;
 }
 
@@ -16,12 +21,30 @@ li {
     border-radius: 40px;
     color: black;
 }
-.landing{
+
+.landing {
     background-image: url(../images/pizza4.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    height: 600px;
+    height: 620px;
     text-align: center;
     color: white;
 }
+#spantext {
+    color: yellow;
+}
+.exc {
+    color: yellow;
+}
+
+#piz-pap {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 35px;
+    font-weight: normal;
+    color: black;
+}
+
+/* .text-center{
+    margin-top: 300px;
+} */
