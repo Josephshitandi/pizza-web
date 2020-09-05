@@ -135,7 +135,8 @@
                     </div>
                 </div>
             </div>
-        </div><br><br>
+        </div>
+        <!-- order summary -->
         <div class="order-summary" id="sum-order">
             <h1 class="text-center" id="summary">Order Summary</h1>
             <h2 class="text-center summary">Hello there, your order is as follows:</h2>
@@ -159,6 +160,38 @@
             <div class="d-block mx-auto text-center">
                 <button type="submit" class="btn btn-success checkout" id="delivery">Make Delivery</button>
                 <button type="submit" class="btn btn-success checkout" id="pick-up">Pick Up</button>
+            </div>
+        </div><br>
+        <!-- contact section -->
+        <div id="contact">
+            <div class="p-3 mb-2 bg-secondary text-white">
+                <h2>CONTACT US</h2>
+                <p>Kindly reach through the following address</p>
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <form
+                            action="https://gmail.us17.list-manage.com/subscribe/post?u=eead160ea5e799cf83e53ac7c&amp;id=08cc0810a7"
+                            method="post" id="sayhi" name="contacts" class="validate" target="_blank" novalidate>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control" id="form1" placeholder="Name" name="name"
+                                        required>
+                                </div>
+                                <div class="col">
+                                    <input type="email" class="form-control" id="form2" placeholder="Email" name="email"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="form-group" id="sayhi"><br>
+                                <textarea id="form3" id="message" rows="9" placeholder="Your Message here..."
+                                    name="message" required></textarea>
+                            </div>
+                            <button type="submit" id="submit" class="btn btn-outline-light btn-lg btn-block"
+                                onclick="contact()">Submit</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
 
