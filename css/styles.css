@@ -6,6 +6,9 @@
 .nav {
     float: right;
 }
+nav li{
+    float: right;
+}
 
 li {
     display: inline;
@@ -23,7 +26,7 @@ li {
 }
 
 .landing {
-    background-image: url(../images/pizza4.jpeg);
+    background-image: url(../images/pizza8.webp);
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
@@ -77,6 +80,9 @@ h2{
 }
 .menu{
     height: 500px;
+}
+.customerdata{
+    display: none;
 }
 
 /* .text-center{
