@@ -1,4 +1,4 @@
-# Delani-Studio
+# pizza-web
 
 <table>
 <tr>
@@ -10,12 +10,12 @@ Throughout your project, our designers create and implement visual design and wo
 </table>
 
 ## Demo
-Here is a working live demo :  https://Josephshitandi.github.io/Delani-Studio/
+Here is a working live demo :  https://Josephshitandi.github.io/pizza-web/
 
 ## Mobile support
-The Delani-Studio is compatible with devices of all sizes and all OS's, and consistent improvements are being made.
+The pizza-web is compatible with devices of all sizes and all OS's, and consistent improvements are being made.
 
-## [Usage](https://Josephshitandi.github.io/Delani-Studio/)
+## [Usage](https://Josephshitandi.github.io/pizza-web/)
 ### Development
 
 Want to contribute? Awesome!
@@ -38,6 +38,6 @@ To fix a bug or enhance an existing module, follow these steps:
 - Joseph Shitandi Otaaba
 
 ## License 
-[MIT](https://github.com/Josephshitandi/Delani-Studio/blob/master/LICENSE.md)
+[MIT](https://github.com/Josephshitandi/pizza-web/blob/master/LICENSE.md)
 
  © [Joseph Shitandi Otaaba](https://github.com/Josephshitandi)
