@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="./css/styles.css">
-    <title>PIZZA WEB</title>
+    <title>Pizza Web</title>
 </head>
 
 <body>
@@ -17,9 +17,11 @@
             <h1 id="piz-pap" class="">Pi<span id="spantext">zz</span>a shop</h1>
             <div class="nav">
                 <ul class="nav-items">
-                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
                     <li><a href="#order">Orders</a></li>
-                    <li><a href="#contact">Contacts</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#home">Home</a></li>
                 </ul>
             </div>
         </nav>
@@ -27,21 +29,39 @@
 
 
         <!--Start Landing-->
-        <div class="landing">
-            <div class="overlay">
-                <div id="push"></div>
-                <div class="landing-text">
-                    <h1 class="text-white text-center"><span class="pizz">Pizza </span><span class="exc">Shop</span>
-                    </h1>
-                    <h2 class="text-white text-center">Get your pizza in an instant.</h2>
-                </div>
-                <div class="h-buttons text-center">
-                    <a href="#order">
-                        <button class="btn bg-info floater  infinite delay-2s">Order Now</button>
-                    </a>
+        <div class="intro" id="home">
+            <div class="landing">
+                <div class="overlay">
+                    <div id="push"></div>
+                    <div class="landing-text">
+                        <h1 class="text-white "><span class="pizz">WEL</span><span class="exc">COME</span>
+                        </h1>
+
+                    </div>
+                    <div class="h-buttons text-center">
+                        <h2 class="text-white text-center">Get your pizza in an instant.</h2>
+                        <a href="#menu">
+                            <button class="btn bg-info floater  infinite delay-3s">Menu</button>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div> <br><br>
+        <!-- about section -->
+        <div id="about">
+            <div class="row">
+                <div class="col-md-6 offset-sm-3">
+                    <h2>ABOUT US</h2>
+                    <p>Debonairs Pizza is a Kenyan based pizza restaurant founded in 2004 by John kamau. John came up
+                        with the
+                        idea and business model to found the company
+                        following a gap-year trip to Nairobi when he was a student at the University of Nairobi.
+                        Debonairs pizza
+                        is located in Nairobi near university of Nairobi</p>
+                </div>
+            </div><br>
+
+        </div>
         <!-- menu -->
         <div class="container" menu id="menu">
             <h2>MENU</h2>
@@ -51,7 +71,7 @@
                     <div class="card card0">
                         <img src="./images/pizza2.jpeg" class="img-fluid" alt="Small size">
                         <div class="project">
-                            <p id="pro">Small size</p>
+                            <p id="pro">Small size @ Ksh.400</p>
                         </div>
                     </div>
                 </div>
@@ -59,7 +79,7 @@
                     <div class="card card1">
                         <img src="./images/pizza4.jpeg" class="img-fluid" alt="Medium size">
                         <div class="project2">
-                            <p id="pro">Medium Size</p>
+                            <p id="pro">Medium Size @ Ksh.600</p>
                         </div>
                     </div>
                 </div>
@@ -67,14 +87,19 @@
                     <div class=" card card2">
                         <img src="./images/pizza1.jpeg" class="img-fluid" alt="Large size">
                         <div class="project3">
-                            <p id="pro">Large Size</p>
+                            <p id="pro">Large Size @ Ksh.1000</p>
                         </div>
                     </div>
-                </div>
+                </div><br>
+                <a href="#order">
+                    <button class="btn bg-info floater  infinite delay-3s">Order Now</button>
+                </a>
             </div>
         </div><br><br>
+
         <!-- order form -->
         <div class="orders" id="order">
+
             <div class="p-3 mb-2 bg-secondary text-white">
                 <h1 class="text-center" id="order-pizza">Order Pizza</h1>
                 <div class="form-group row">
@@ -82,7 +107,7 @@
                     <div class="col-sm-8 order-overlay text-center">
                         <form class="col-sm-8 offset-sm-2 text-center">
                             <label>Pick your pizza Flavour:</label>
-                            <select class="custom-select custom-select-md mb-3 flavour" required>
+                            <select class="custom-select custom-select-md mb-3 flavour" id="ptype" required>
                                 <option value=""></option>
                                 <option value="vegtikka">Veg Tikka</option>
                                 <option value="chickentikka">Chicken Tikka</option>
@@ -134,39 +159,40 @@
                         </form>
                     </div>
                 </div>
+                <!-- order summary -->
+                <div class="order-summary" id="sum-order">
+                    <h1 class="text-center" id="summary">Order Summary</h1>
+                    <h2 class="text-center summary">Hello there, your order is as follows:</h2>
+                    <ol id="list" class="text-center sum">
+                    </ol>
+
+
+                    <div class="cdata-overlay">
+                        <div class="customerdata row">
+                            <div class="col-sm-3"></div>
+                            <form action="" class="form-group col-sm-6 data">
+                                <input type="text" class="form-control cdata" placeholder="Enter your Name:">
+                                <input type="text" class="form-control cdata" placeholder="Enter your phone number: ">
+                                <input type="text" class="form-control cdata" placeholder="Enter the location: ">
+                                <button class="btn bg-info text-center d-block mx-auto go">Make Delivery</button>
+                            </form>
+
+                            <div class="col-sm-3"></div>
+                        </div>
+                    </div>
+                    <div class="d-block mx-auto text-center">
+                        <button type="submit" class="btn btn-success checkout" id="delivery">Make Delivery</button>
+                        <button type="submit" class="btn btn-success checkout" id="pick-up">Pick Up</button>
+                    </div>
+                </div><br>
             </div>
         </div>
-        <!-- order summary -->
-        <div class="order-summary" id="sum-order">
-            <h1 class="text-center" id="summary">Order Summary</h1>
-            <h2 class="text-center summary">Hello there, your order is as follows:</h2>
-            <ol id="list" class="text-center sum">
-            </ol>
 
-
-            <div class="cdata-overlay">
-                <div class="customerdata row">
-                    <div class="col-sm-3"></div>
-                    <form action="" class="form-group col-sm-6 data">
-                        <input type="text" class="form-control cdata" placeholder="Enter your Name:">
-                        <input type="text" class="form-control cdata" placeholder="Enter your phone number: ">
-                        <input type="text" class="form-control cdata" placeholder="Enter the location: ">
-                        <button class="btn bg-info text-center d-block mx-auto go">Make Delivery</button>
-                    </form>
-
-                    <div class="col-sm-3"></div>
-                </div>
-            </div>
-            <div class="d-block mx-auto text-center">
-                <button type="submit" class="btn btn-success checkout" id="delivery">Make Delivery</button>
-                <button type="submit" class="btn btn-success checkout" id="pick-up">Pick Up</button>
-            </div>
-        </div><br>
         <!-- contact section -->
         <div id="contact">
             <div class="p-3 mb-2 bg-secondary text-white">
                 <h2>CONTACT US</h2>
-                <p>Kindly reach through the following address</p>
+                <p>Kindly reach us through the following address</p>
                 <div class="row">
                     <div class="col-md-2"></div>
                     <div class="col-md-8">
