@@ -8,81 +8,73 @@ $(document).ready(function () {
     var totalCost = 0;
     var newOrder = [];
 
-    Pizza.prototype.myTypePrice = function () {
+    Pizza.prototype.myToppingsPrice = function () {
         if (this.size === "large") {
-            if (this.type === "vegtikka") {
-                return 1500;
-            } else if (this.type === "chickentikka") {
-                return 1200;
-            } else if (this.type === "periperi") {
-                return 1000;
-            } else if (this.type === "hawaiian") {
-                return 900;
+            if (this.toppings === "tomato") {
+                return 150;
+            } else if (this.toppings === "onions") {
+                return 120;
             } else {
-                return 800;
+                return 180;
             }
         } else if (this.size === "medium") {
-            if (this.type === "vegtikka") {
-                return 1200;
-            } else if (this.type === "chickentikka") {
-                return 1000;
-            } else if (this.type === "periperi") {
-                return 800;
-            } else if (this.type === "hawaiian") {
-                return 700;
+            if (this.toppings === "tomato") {
+                return 100;
+            } else if (this.toppings === "onions") {
+                return 80;
             } else {
-                return 600;
+                return 140;
             }
         } else {
-            if (this.type === "vegtikka") {
-                return 1000;
-            } else if (this.type === "chickentikka") {
-                return 1800;
-            } else if (this.type === "periperi") {
-                return 600;
-            } else if (this.type === "hawaiian") {
-                return 500;
+            if (this.topping === "tomato") {
+                return 80;
+            } else if (this.toppings === "onions") {
+                return 50;
             } else {
-                return 450;
-            }
-        }
-
-    }
-    Pizza.prototype.myToppingsPrice = function () {
-        if (this.type === "large") {
-            if (this.toppings === "tomato") {
-                return 200;
-            } else if (this.toppings === "onions") {
-                return 160;
-            } else if (this.toppings === "mushroom") {
-                return 140;
-            } {
-                return 120;
-            }
-
-        } else if (this.type === "medium") {
-            if (this.toppings === "tomato") {
-                return 180;
-            } else if (this.toppings === "onions") {
-                return 150;
-            } else if (this.toppings === "mushroom") {
-                return 120;
-            } {
                 return 100;
             }
+        }
+    };
 
-        } else if (this.type === "large") {
-            if (this.toppings === "tomato") {
-                return 160;
-            } else if (this.toppings === "onions") {
-                return 140;
-            } else if (this.toppings === "mushroom") {
-                return 110;
-            } {
-                return 90;
+    Pizza.prototype.getCrustPrice = function () {
+        if (this.crust === "thick") {
+            return 100;
+        } else {
+            return 0;
+        }
+    };
+
+    Pizza.prototype.myTypePrice = function () {
+        if (this.size === "large") {
+            if (this.type === "Veg Tikka") {
+                return 1200;
+            } else if (this.type === "Periperi") {
+                return 1300;
+            } else if (this.type === "Hawaiian") {
+                return 1100;
+            } else {
+                return 900;
             }
-
-
+        } else if (this.size === "medium") {
+            if (this.type === "Veg Tikka") {
+                return 850;
+            } else if (this.type === "Periperi") {
+                return 950;
+            } else if (this.type === "Hawaiian") {
+                return 850;
+            } else {
+                return 750;
+            }
+        } else {
+            if (this.type === "Veg Tikka") {
+                return 600;
+            } else if (this.type === "Periperi") {
+                return 650;
+            } else if (this.type === "Hawaiian") {
+                return 750;
+            } else {
+                return 550;
+            }
         }
     }
     Pizza.prototype.myCrustPrice = function () {
@@ -91,7 +83,7 @@ $(document).ready(function () {
         } else if (this.crust === "custom") {
             return 50;
         } else {
-            return 0;
+            return 10;
         }
     }
     Pizza.prototype.myPizzaPrice = function () {
@@ -110,7 +102,6 @@ $(document).ready(function () {
         $("#crust").val();
         $("#size").val();
         $("#toppings").val();
-        console.log(newOrder);
 
         totalCost = 0;
 
@@ -141,7 +132,54 @@ $(document).ready(function () {
             "</td>" +
             "</tr>"
         );
-    })
+        if (newOrder.length > 0) {
+            $("#form-title").empty();
+            $("#form-title").append("Add Another Order");
+        }
+
+        $("#total-amount").fadeIn();
+        $("#checkout").fadeIn();
+        $("#orders-div").fadeIn();
+
+        $("#total-amount").empty();
+        $("#total-amount").append(totalCost);
+        $(".total-amount").show();
+    });
+    $("#checkout").click(function () {
+        $(".checkout-options").show();
+    });
+
+    $("#checkout-form").submit(function (e) {
+        e.preventDefault();
+        var name = $("#name").val();
+        var deliveryOption = $("#delivery-option").val();
+        customerName = name;
+        $("#name").val("");
+        $("#delivery-option").val("");
+        $(".checkout-options").hide();
+        if (deliveryOption === "deliver") {
+            $(".location").show();
+            $(".delivery-cost").show();
+            $("#delivery-amount").append(200);
+            totalCost += 200;
+            $("#total-amount").empty();
+            $("#total-amount").append(totalCost);
+        } else {
+            alert(customerName + ": Your total bill is Ksh. " + totalCost + ". Your order will be ready for collection in the next 2 hours");
+        }
+    });
+
+    $("#location-form").submit(function (e) {
+        e.preventDefault();
+        var estateEntered = $("#estate").val();
+        var houseNumberEntered = $("#house-number").val();
+        estate = estateEntered;
+        houseNumber = houseNumberEntered;
+        $(".location").hide();
+        alert(customerName + ": Your total bill is Ksh. " + totalCost + ". Your order will be delivered to " + estate + ", " + houseNumber + " in the next 2 hours");
+    });
+
+
 
 
 
