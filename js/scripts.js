@@ -5,11 +5,8 @@ $(document).ready(function () {
         this.toppings = toppings;
         this.size = size;
     }
-    // var newpizza = new Pizza("Tikka","thin","Sausage","large");
-    // var susanOrder = new Pizza("Veg","Thin","Meat","large")
-    // console.log(susanOrder)
-    // console.log(susanOrder.size)
-    Pizza.prototype.typePrice = function () {
+
+    Pizza.prototype.mytypePrice = function () {
         if (this.size === "large") {
             if (this.type === "vegtikka") {
                 return 1500;
@@ -95,6 +92,18 @@ $(document).ready(function () {
             return 0;
         }
     }
+    Pizza.prototype.myPizzaPrice = function () {
+        return this.myCrustPrice() + this.mytypePrice() + this.myToppingsPrice()
+    }
+
+    $("#user-form").submit(function(){
+        var userType = $("#ptype").val();
+        var userCrust = $("#crust").val();
+        var userSize = $("#size").val();
+        var userToppings = $("toppings").val();
+        var newUser = new Pizza(userType,userCrust,userToppings,userSize)
+        console.log(newUser)
+    })
 
 
 
