@@ -179,7 +179,13 @@ $(document).ready(function () {
         $(".location").hide();
         alert(customerName + ": Your total bill is Ksh. " + totalCost + ". Your order will be delivered to " + estate + ", " + houseNumber + " in the next one hours");
     });
-
+    //form function
+    function contact(form) {
+        var name = document.forms["contacts"]["name"].value;
+        var email = document.forms["contacts"]["email"].value;
+        var message = document.forms["contacts"]["message"].value;
+        alert("Hello! " + name + "," + " We have received your message. Thank you for reaching out to us. ");
+    }
 
 
 
