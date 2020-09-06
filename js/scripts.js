@@ -43,7 +43,44 @@ $(document).ready(function () {
                 return 450;
             }
         }
-        console.log()
+
+    }
+    Pizza.prototype.myToppingsPrice = function () {
+        if (this.type === "large") {
+            if (this.toppings === "tomato") {
+                return 200;
+            } else if (this.toppings === "onions") {
+                return 160;
+            } else if (this.toppings === "mushroom") {
+                return 140;
+            } {
+                return 120;
+            }
+
+        } else if (this.type === "medium") {
+            if (this.toppings === "tomato") {
+                return 180;
+            } else if (this.toppings === "onions") {
+                return 150;
+            } else if (this.toppings === "mushroom") {
+                return 120;
+            } {
+                return 100;
+            }
+
+        } else if (this.type === "large") {
+            if (this.toppings === "tomato") {
+                return 160;
+            } else if (this.toppings === "onions") {
+                return 140;
+            } else if (this.toppings === "mushroom") {
+                return 110;
+            } {
+                return 90;
+            }
+
+
+        }
     }
 
 
