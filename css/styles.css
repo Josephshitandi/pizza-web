@@ -147,18 +147,4 @@ textarea {
     padding: 20px;
     width: 80%;
     height: 60vh;
-    /* z-index: 3;
-    border-radius: 15px;
-    padding: 20px;
-    width: 40%;
-    height: 60vh;
-    background: rgb(255, 0, 234);
-    position: absolute;
-    top: 300%;
-    left: 50%;
-    bottom: 150%;
-    transform: translate(-50%, -50%); */
-}
-/* .checkout-options, .location{
-    margin-top: 1300px; */
 }
