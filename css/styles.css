@@ -143,21 +143,22 @@ textarea {
 
 .checkout-options,
 .location {
-    z-index: 3;
+    background: rgb(255, 0, 234);
+    padding: 20px;
+    width: 80%;
+    height: 60vh;
+    /* z-index: 3;
     border-radius: 15px;
     padding: 20px;
     width: 40%;
     height: 60vh;
-    background: aqua;
+    background: rgb(255, 0, 234);
     position: absolute;
-    top: 50%;
+    top: 300%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    bottom: 150%;
+    transform: translate(-50%, -50%); */
 }
-.checkout-options, .location{
-    margin-top: 1300px;
+/* .checkout-options, .location{
+    margin-top: 1300px; */
 }
-
-/* .text-center{
-    margin-top: 300px;
-} */

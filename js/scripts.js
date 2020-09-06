@@ -98,10 +98,10 @@ $(document).ready(function () {
         var userToppings = $("#toppings").val();
         var newPizza = new Pizza(userType, userCrust, userToppings, userSize);
         newOrder.push(newPizza);
-        $("#ptype").val();
-        $("#crust").val();
-        $("#size").val();
-        $("#toppings").val();
+        $("#ptype").val("");
+        $("#crust").val("");
+        $("#size").val("");
+        $("#toppings").val("");
 
         totalCost = 0;
 
@@ -112,19 +112,19 @@ $(document).ready(function () {
             "<tr>" +
             '<th scope="row">' +
             newPizza.type +
-            " (" +
+            " - " +
             newPizza.size +
-            ") - " +
+            "  @ " +
             newPizza.myTypePrice() +
             "</th>" +
             "<td>" +
             newPizza.toppings +
-            " - " +
+            " @ " +
             newPizza.myToppingsPrice() +
             "</td>" +
             "<td>" +
             newPizza.crust +
-            " - " +
+            " @ " +
             newPizza.myCrustPrice() +
             "</td>" +
             "<td>" +
@@ -165,7 +165,7 @@ $(document).ready(function () {
             $("#total-amount").empty();
             $("#total-amount").append(totalCost);
         } else {
-            alert(customerName + ": Your total bill is Ksh. " + totalCost + ". Your order will be ready for collection in the next 2 hours");
+            alert(customerName + ": Your total bill is Ksh. " + totalCost + ". Your order will be ready for collection in the next one hours");
         }
     });
 
@@ -176,7 +176,7 @@ $(document).ready(function () {
         estate = estateEntered;
         houseNumber = houseNumberEntered;
         $(".location").hide();
-        alert(customerName + ": Your total bill is Ksh. " + totalCost + ". Your order will be delivered to " + estate + ", " + houseNumber + " in the next 2 hours");
+        alert(customerName + ": Your total bill is Ksh. " + totalCost + ". Your order will be delivered to " + estate + ", " + houseNumber + " in the next one hours");
     });
 
 
