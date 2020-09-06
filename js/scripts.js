@@ -5,6 +5,10 @@ $(document).ready(function () {
         this.toppings = toppings;
         this.size = size;
     }
+    // var newpizza = new Pizza("Tikka","thin","Sausage","large");
+    // var susanOrder = new Pizza("Veg","Thin","Meat","large")
+    // console.log(susanOrder)
+    // console.log(susanOrder.size)
     Pizza.prototype.typePrice = function () {
         if (this.size === "large") {
             if (this.type === "vegtikka") {
@@ -80,6 +84,15 @@ $(document).ready(function () {
             }
 
 
+        }
+    }
+    Pizza.prototype.myCrustPrice = function () {
+        if (this.crust === "thick") {
+            return 100;
+        } else if (this.crust === "custom") {
+            return 50;
+        } else {
+            return 0;
         }
     }
 
