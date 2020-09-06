@@ -3,8 +3,7 @@
 <table>
 <tr>
 <td>
- Delani studio website is a website that design practice offers a full range of services including brand strategy, interaction and visual design and user experience testing.
-Throughout your project, our designers create and implement visual design and workflows, solicit user feedback and work with you to make sure what gets built is what is needed.
+ Debonairs Pizza is a Kenyan based pizza restaurant founded in 2004 by John kamau. John came up with the idea and business model to found the company following a gap-year trip to Nairobi when he was a student at the University of Nairobi. Debonairs pizza is located in Nairobi near university of Nairobi.
 </td>
 </tr>
 </table>
