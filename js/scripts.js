@@ -157,10 +157,11 @@ $(document).ready(function () {
         $("#name").val("");
         $("#delivery-option").val("");
         $(".checkout-options").hide();
+        $("#total-amount").empty();
         if (deliveryOption === "deliver") {
             $(".location").show();
             $(".delivery-cost").show();
-            $("#delivery-amount").append(200);
+            $("#total-amount").empty();
             totalCost += 200;
             $("#total-amount").empty();
             $("#total-amount").append(totalCost);
