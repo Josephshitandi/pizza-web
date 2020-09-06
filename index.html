@@ -99,110 +99,144 @@
 
         <!-- order form -->
         <div class="orders" id="order">
-
-            <div class="p-3 mb-2 bg-secondary text-white">
-                <h1 class="text-center" id="order-pizza">Order Pizza</h1>
-                <div class="form-group row">
-                    <div class="col-sm-2"></div>
-                    <div class="col-sm-8 order-overlay text-center">
-                        <form class="col-sm-8 offset-sm-2 text-center" id="user-form">
-                            <label>Pick your pizza Flavour:</label>
-                            <select class="custom-select custom-select-md mb-3 flavour" id="ptype" required>
-                                <option value=""></option>
-                                <option value="vegtikka">Veg Tikka</option>
-                                <option value="chickentikka">Chicken Tikka</option>
-                                <option value="periperi">Peri-Peri Chicken</option>
-                                <option value="hawaiian">Hawaiian</option>
-                                <option value="mushroom">Chicken and Mushroom</option>
-                            </select>
-                            <label>Chose your preferred Size:</label>
-                            <select class="custom-select custom-select-md mb-3" id="size" required>
-                                <option value=""></option>
-                                <option value="small">Small</option>
-                                <option value="medium">Medium</option>
-                                <option value="large">Large</option>
-                            </select>
-                            <label for="crust">Choose your favorite Crust:</label>
-                            <select class="custom-select custom-select-md mb-3" id="crust" required>
-                                <option value=""></option>
-                                <option value="thin">Thin Crust</option>
-                                <option value="thick">Thick Crust</option>
-                                <option value="custom">Custom Crust</option>
-                            </select>
-                            <label>Select Your favourite Toppings</label>
-                            <select class="custom-select custom-select-md mb-3" id="toppings" required>
-                                <option value=""></option>
-                                <option value="tomato">Tomato</option>
-                                <option value="onions">Onions</option>
-                                <option value="mushroom">Mushroom</option>
-                                <option value="greenpepper">Green Pepper</option>
-                            </select>
-                            <button type="submit" class="btn btn-success checkout" id="checkout">
-                                Checkout
-                            </button>
-                        </form>
-                    </div>
-                </div>
-                <!-- order summary -->
-                <div class="order-summary" id="sum-order">
-                    <h1 class="text-center" id="summary">Order Summary</h1>
-                    <h2 class="text-center summary">Hello there, your order is as follows:</h2>
-                    <ol id="list" class="text-center sum">
-                    </ol>
-
-
-                    <div class="cdata-overlay">
-                        <div class="customerdata row">
-                            <div class="col-sm-3"></div>
-                            <form action="" class="form-group col-sm-6 data">
-                                <input type="text" class="form-control cdata" placeholder="Enter your Name:">
-                                <input type="text" class="form-control cdata" placeholder="Enter your phone number: ">
-                                <input type="text" class="form-control cdata" placeholder="Enter the location: ">
-                                <button class="btn bg-info text-center d-block mx-auto go">Make Delivery</button>
-                            </form>
-
-                            <div class="col-sm-3"></div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="p-3 mb-2 bg-secondary text-white">
+                        <h1 class="text-center" id="order-pizza">Order Pizza</h1>
+                        <div class="form-group row">
+                            <div class="col-md order-overlay text-center">
+                                <form class="col-md-8 text-center" id="user-form">
+                                    <label>Pick your pizza Flavour:</label>
+                                    <select class="custom-select custom-select-md mb-3 flavour" id="ptype" required>
+                                        <option value=""></option>
+                                        <option value="vegtikka">Veg Tikka</option>
+                                        <option value="chickentikka">Chicken Tikka</option>
+                                        <option value="periperi">Peri-Peri Chicken</option>
+                                        <option value="hawaiian">Hawaiian</option>
+                                        <option value="mushroom">Chicken and Mushroom</option>
+                                    </select>
+                                    <label>Chose your preferred Size:</label>
+                                    <select class="custom-select custom-select-md mb-3" id="size" required>
+                                        <option value=""></option>
+                                        <option value="small">Small</option>
+                                        <option value="medium">Medium</option>
+                                        <option value="large">Large</option>
+                                    </select>
+                                    <label for="crust">Choose your favorite Crust:</label>
+                                    <select class="custom-select custom-select-md mb-3" id="crust" required>
+                                        <option value=""></option>
+                                        <option value="thin">Thin Crust</option>
+                                        <option value="thick">Thick Crust</option>
+                                        <option value="custom">Custom Crust</option>
+                                    </select>
+                                    <label>Select Your favourite Toppings</label>
+                                    <select class="custom-select custom-select-md mb-3" id="toppings" required>
+                                        <option value=""></option>
+                                        <option value="tomato">Tomato</option>
+                                        <option value="onions">Onions</option>
+                                        <option value="mushroom">Mushroom</option>
+                                        <option value="greenpepper">Green Pepper</option>
+                                    </select>
+                                    <button type="submit" class="btn btn-success checkout" id="checkout">
+                                        Checkout
+                                    </button>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                    <div class="d-block mx-auto text-center">
-                        <button type="submit" class="btn btn-success checkout" id="delivery">Make Delivery</button>
-                        <button type="submit" class="btn btn-success checkout" id="pick-up">Pick Up</button>
-                    </div>
-                </div><br>
-            </div>
-        </div><br>
+                </div>
+                <div class="col-md-6">
+                    <div class="col-md hidden" id="orders-div">
+                        <div class="row">
+                            <h3>Your Orders</h3>
+                            <table class="table table-striped table-dark">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Type</th>
+                                        <th scope="col">Topping</th>
+                                        <th scope="col">Crust</th>
+                                        <th scope="col">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="order-summary"></tbody>
+                            </table>
 
-        <!-- contact section -->
-        <div id="contact">
-            <div class="p-3 mb-2 bg-secondary text-white">
-                <h2>CONTACT US</h2>
-                <p>Kindly reach us through the following address</p>
-                <div class="row">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-8">
-                        <form action="" method="post" id="sayhi" name="contacts" class="validate" target="_blank"
-                            novalidate>
-                            <div class="row">
-                                <div class="col">
-                                    <input type="text" class="form-control" id="form1" placeholder="Name" name="name"
-                                        required>
-                                </div>
-                                <div class="col">
-                                    <input type="email" class="form-control" id="form2" placeholder="Email" name="email"
-                                        required>
-                                </div>
-                            </div>
-                            <div class="form-group" id="sayhi"><br>
-                                <textarea id="form3" id="message" rows="9" placeholder="Your Message here..."
-                                    name="message" required></textarea>
-                            </div>
-                            <button type="submit" id="submit" class="btn btn-outline-light btn-lg btn-block"
-                                onclick="contact()">Submit</button>
-                        </form>
+                            <p class="delivery-cost hidden">
+                                Delivery: Ksh. <span id="delivery-amount"></span>
+                            </p>
+                            <p class="total-amount hidden">
+                                Total: Ksh. <span id="total-amount"></span>
+                            </p>
+                            <br /><br />
+                            <button class="btn btn-primary hidden" id="checkout">Checkout</button>
+                        </div>
                     </div>
+                </div>
+
+
+
+            </div>
+            <!-- order summary -->
+<!-- 
+            <div class="order-summary" id="sum-order">
+                <h1 class="text-center" id="summary">Order Summary</h1>
+                <h2 class="text-center summary">Hello there, your order is as follows:</h2>
+                <ol id="list" class="text-center sum">
+                </ol>
+
+
+                <div class="cdata-overlay">
+                    <div class="customerdata row">
+                        <div class="col-sm-3"></div>
+                        <form action="" class="form-group col-sm-6 data">
+                            <input type="text" class="form-control cdata" placeholder="Enter your Name:">
+                            <input type="text" class="form-control cdata" placeholder="Enter your phone number: ">
+                            <input type="text" class="form-control cdata" placeholder="Enter the location: ">
+                            <button class="btn bg-info text-center d-block mx-auto go">Make Delivery</button>
+                        </form>
+
+                        <div class="col-sm-3"></div>
+                    </div>
+                </div>
+                <div class="d-block mx-auto text-center">
+                    <button type="submit" class="btn btn-success checkout" id="delivery">Make Delivery</button>
+                    <button type="submit" class="btn btn-success checkout" id="pick-up">Pick Up</button>
+                </div>
+            </div><br>
+        </div>
+    </div><br> -->
+
+    <!-- contact section -->
+    <div id="contact">
+        <div class="p-3 mb-2 bg-secondary text-white">
+            <h2>CONTACT US</h2>
+            <p>Kindly reach us through the following address</p>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <form action="" method="post" id="sayhi" name="contacts" class="validate" target="_blank"
+                        novalidate>
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="form-control" id="form1" placeholder="Name" name="name"
+                                    required>
+                            </div>
+                            <div class="col">
+                                <input type="email" class="form-control" id="form2" placeholder="Email" name="email"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="form-group" id="sayhi"><br>
+                            <textarea id="form3" id="message" rows="9" placeholder="Your Message here..." name="message"
+                                required></textarea>
+                        </div>
+                        <button type="submit" id="submit" class="btn btn-outline-light btn-lg btn-block"
+                            onclick="contact()">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
 
 
     </div>

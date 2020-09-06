@@ -5,8 +5,10 @@ $(document).ready(function () {
         this.toppings = toppings;
         this.size = size;
     }
+    var totalCost = 0;
+    var newOrder = [];
 
-    Pizza.prototype.mytypePrice = function () {
+    Pizza.prototype.myTypePrice = function () {
         if (this.size === "large") {
             if (this.type === "vegtikka") {
                 return 1500;
@@ -93,17 +95,54 @@ $(document).ready(function () {
         }
     }
     Pizza.prototype.myPizzaPrice = function () {
-        return this.myCrustPrice() + this.mytypePrice() + this.myToppingsPrice()
+        return this.myCrustPrice() + this.myTypePrice() + this.myToppingsPrice()
     }
 
-    $("#user-form").submit(function(){
+    $("#user-form").submit(function (event) {
+        event.preventDefault();
         var userType = $("#ptype").val();
         var userCrust = $("#crust").val();
         var userSize = $("#size").val();
-        var userToppings = $("toppings").val();
-        var newUser = new Pizza(userType,userCrust,userToppings,userSize)
-        console.log(newUser)
+        var userToppings = $("#toppings").val();
+        var newPizza = new Pizza(userType, userCrust, userToppings, userSize);
+        newOrder.push(newPizza);
+        $("#ptype").val();
+        $("#crust").val();
+        $("#size").val();
+        $("#toppings").val();
+        console.log(newOrder);
+
+        totalCost = 0;
+
+        for (let i = 0; i < newOrder.length; i++) {
+            totalCost += newOrder[i].myPizzaPrice();
+        }
+        $("#order-summary").append(
+            "<tr>" +
+            '<th scope="row">' +
+            newPizza.type +
+            " (" +
+            newPizza.size +
+            ") - " +
+            newPizza.myTypePrice() +
+            "</th>" +
+            "<td>" +
+            newPizza.toppings +
+            " - " +
+            newPizza.myToppingsPrice() +
+            "</td>" +
+            "<td>" +
+            newPizza.crust +
+            " - " +
+            newPizza.myCrustPrice() +
+            "</td>" +
+            "<td>" +
+            newPizza.myPizzaPrice() +
+            "</td>" +
+            "</tr>"
+        );
     })
+
 
 
 
