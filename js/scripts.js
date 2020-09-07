@@ -90,13 +90,13 @@ $(document).ready(function () {
         return this.myCrustPrice() + this.myTypePrice() + this.myToppingsPrice()
     }
 
-    $("#user-form").submit(function (event) {
+    $("#customer-form").submit(function (event) {
         event.preventDefault();
-        var userType = $("#ptype").val();
-        var userCrust = $("#crust").val();
-        var userSize = $("#size").val();
-        var userToppings = $("#toppings").val();
-        var newPizza = new Pizza(userType, userCrust, userToppings, userSize);
+        var customerType = $("#ptype").val();
+        var customerCrust = $("#crust").val();
+        var customerSize = $("#size").val();
+        var customerToppings = $("#toppings").val();
+        var newPizza = new Pizza(customerType, customerCrust, customerToppings, customerSize);
         newOrder.push(newPizza);
         $("#ptype").val("");
         $("#crust").val("");
@@ -149,8 +149,8 @@ $(document).ready(function () {
         $(".checkout-options").show();
     });
 
-    $("#checkout-form").submit(function (e) {
-        e.preventDefault();
+    $("#checkout-form").submit(function (event) {
+        event.preventDefault();
         var name = $("#name").val();
         var deliveryOption = $("#delivery-option").val();
         customerName = name;
@@ -173,8 +173,8 @@ $(document).ready(function () {
         }
     });
 
-    $("#location-form").submit(function (e) {
-        e.preventDefault();
+    $("#location-form").submit(function (event) {
+        event.preventDefault();
         var estateEntered = $("#estate").val();
         var houseNumberEntered = $("#house-number").val();
         estate = estateEntered;
@@ -183,8 +183,8 @@ $(document).ready(function () {
         $(".location").hide();
         alert(customerName + ": Your total bill is Ksh. " + totalCost + ". Your order will be delivered to " + estate + ", " + houseNumber + " in the next one hours");
     });
-    $("#contacts").submit(function (e) {
-        e.preventDefault();
+    $("#contacts").submit(function (event) {
+        event.preventDefault();
         var name1 = $("#form1").val();
         var email1 = $("#form2").val();
         var message1 = $("#form3").val();
