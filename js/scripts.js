@@ -183,24 +183,17 @@ $(document).ready(function () {
         $(".location").hide();
         alert(customerName + ": Your total bill is Ksh. " + totalCost + ". Your order will be delivered to " + estate + ", " + houseNumber + " in the next one hours");
     });
-    //form function
-    function contactUs() {
-        var name1 = document.getElementById("form1").value;
-        var cemail = document.getElementById("form2").value;
-        var cmessage = document.getElementById("form3").value;
-        console.log(name1);
+    $("#contacts").submit(function (e) {
+        e.preventDefault();
+        var name1 = $("#form1").val();
+        var email1 = $("#form2").val();
+        var message1 = $("#form3").val();
         alert("Hello! " + name1 + "," + " We have received your message. Thank you for reaching out to us. ");
-    }
+
+    });
 
 
 
-
-    // function submit(form) {
-    //     var name = document.forms["contacts"]["name"].value;
-    //     var email = document.forms["contacts"]["email"].value;
-    //     var message = document.forms["contacts"]["message"].value;
-    //     alert("Hello! " + name + "," + " We have received your message. Thank you for reaching out to us. ");
-    // }
 
 
 
