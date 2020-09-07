@@ -157,13 +157,16 @@ $(document).ready(function () {
         $("#name").val("");
         $("#delivery-option").val("");
         $(".checkout-options").hide();
+        $("#checkout").hide();
         $("#total-amount").empty();
         if (deliveryOption === "deliver") {
             $(".location").show();
             $(".delivery-cost").show();
             $("#total-amount").empty();
+            $("#delivery-amount").append(200);
             totalCost += 200;
             $("#total-amount").empty();
+
             $("#total-amount").append(totalCost);
         } else {
             alert(customerName + ": Your total bill is Ksh. " + totalCost + ". Your order will be ready for collection in the next one hours");
@@ -176,16 +179,28 @@ $(document).ready(function () {
         var houseNumberEntered = $("#house-number").val();
         estate = estateEntered;
         houseNumber = houseNumberEntered;
+        $("#checkout").hide();
         $(".location").hide();
         alert(customerName + ": Your total bill is Ksh. " + totalCost + ". Your order will be delivered to " + estate + ", " + houseNumber + " in the next one hours");
     });
     //form function
-    function contact(form) {
-        var name = document.forms["contacts"]["name"].value;
-        var email = document.forms["contacts"]["email"].value;
-        var message = document.forms["contacts"]["message"].value;
-        alert("Hello! " + name + "," + " We have received your message. Thank you for reaching out to us. ");
+    function contactUs() {
+        var name1 = document.getElementById("form1").value;
+        var cemail = document.getElementById("form2").value;
+        var cmessage = document.getElementById("form3").value;
+        console.log(name1);
+        alert("Hello! " + name1 + "," + " We have received your message. Thank you for reaching out to us. ");
     }
+
+
+
+
+    // function submit(form) {
+    //     var name = document.forms["contacts"]["name"].value;
+    //     var email = document.forms["contacts"]["email"].value;
+    //     var message = document.forms["contacts"]["message"].value;
+    //     alert("Hello! " + name + "," + " We have received your message. Thank you for reaching out to us. ");
+    // }
 
 
 
