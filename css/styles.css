@@ -132,7 +132,7 @@ textarea {
     background-color: transparent;
 }
 
-.total-amount,
+.finalAmount,
 .delivery-cost {
     font-weight: bold;
     font-size: 1.6em;

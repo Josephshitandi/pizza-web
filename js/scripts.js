@@ -5,7 +5,7 @@ $(document).ready(function () {
         this.toppings = toppings;
         this.size = size;
     }
-    var totalCost = 0;
+    var totalAmount = 0;
     var newOrder = [];
 
     Pizza.prototype.myToppingsPrice = function () {
@@ -103,10 +103,10 @@ $(document).ready(function () {
         $("#size").val("");
         $("#toppings").val("");
 
-        totalCost = 0;
+        totalAmount = 0;
 
         for (let i = 0; i < newOrder.length; i++) {
-            totalCost += newOrder[i].myPizzaPrice();
+            totalAmount += newOrder[i].myPizzaPrice();
         }
         $("#order-summary").append(
             "<tr>" +
@@ -132,18 +132,19 @@ $(document).ready(function () {
             "</td>" +
             "</tr>"
         );
+        $("#order-summary").append("");
         if (newOrder.length > 0) {
             $("#form-title").empty();
             $("#form-title").append("Add Another Order");
         }
 
-        $("#total-amount").fadeIn();
+        $("#finalAmount").fadeIn();
         $("#checkout").fadeIn();
         $("#orders-div").fadeIn();
 
-        $("#total-amount").empty();
-        $("#total-amount").append(totalCost);
-        $(".total-amount").show();
+        $("#finalAmount").empty();
+        $("#finalAmount").append(totalAmount);
+        $(".finalAmount").show();
     });
     $("#checkout").click(function () {
         $(".checkout-options").show();
@@ -158,18 +159,21 @@ $(document).ready(function () {
         $("#delivery-option").val("");
         $(".checkout-options").hide();
         $("#checkout").hide();
-        $("#total-amount").empty();
+        $("#finalAmount").empty();
         if (deliveryOption === "deliver") {
             $(".location").show();
             $(".delivery-cost").show();
-            $("#total-amount").empty();
-            $("#delivery-amount").append(200);
-            totalCost += 200;
-            $("#total-amount").empty();
+            $("#finalAmount").empty();
+            $("#delivery-amount").append(300);
+            totalAmount += 300;
+            $("#finalAmount").empty();
+            $("#finalAmount").empty();
+        $("#finalAmount").append(totalAmount);
+        $(".finalAmount").show();
 
-            $("#total-amount").append(totalCost);
+            $("#finalAmount").append(totalAmount);
         } else {
-            alert(customerName + ": Your total bill is Ksh. " + totalCost + ". Your order will be ready for collection in the next one hours");
+            alert(customerName + ": Your total bill is Ksh. " + totalAmount + ". Your order will be ready for collection in the next one hours");
         }
     });
 
@@ -181,7 +185,10 @@ $(document).ready(function () {
         houseNumber = houseNumberEntered;
         $("#checkout").hide();
         $(".location").hide();
-        alert(customerName + ": Your total bill is Ksh. " + totalCost + ". Your order will be delivered to " + estate + ", " + houseNumber + " in the next one hours");
+        $("#finalAmount").empty();
+        $("#finalAmount").append(totalAmount);
+        $(".finalAmount").show();
+        alert(customerName + ": Your total bill is Ksh. " + totalAmount + ". Your order will be delivered to " + estate + ", " + houseNumber + " in the next one hours");
     });
     $("#contacts").submit(function (event) {
         event.preventDefault();
